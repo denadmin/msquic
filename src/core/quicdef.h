@@ -485,7 +485,7 @@ CXPLAT_STATIC_ASSERT(
 //
 // The default congestion control algorithm
 //
-#define QUIC_CONGESTION_CONTROL_ALGORITHM_DEFAULT   QUIC_CONGESTION_CONTROL_ALGORITHM_CUBIC
+#define QUIC_CONGESTION_CONTROL_ALGORITHM_DEFAULT   QUIC_CONGESTION_CONTROL_ALGORITHM_BBR
 
 //
 // The default idle timeout period after which the source CID is updated before sending again.
