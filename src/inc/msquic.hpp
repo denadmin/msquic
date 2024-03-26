@@ -456,7 +456,7 @@ struct MsQuicRegistration {
     }
     MsQuicRegistration(
         _In_z_ const char* AppName,
-        QUIC_EXECUTION_PROFILE Profile = QUIC_EXECUTION_PROFILE_LOW_LATENCY,
+        QUIC_EXECUTION_PROFILE Profile = QUIC_EXECUTION_PROFILE_TYPE_MAX_THROUGHPUT,
         _In_ bool AutoCleanUp = false
         ) noexcept : CloseAllConnectionsOnDelete(AutoCleanUp) {
         const QUIC_REGISTRATION_CONFIG RegConfig = { AppName, Profile };

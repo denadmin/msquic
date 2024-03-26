@@ -138,9 +138,9 @@ QuicSettingsSetDefault(
     if (!Settings->IsSet.StatelessOperationExpirationMs) {
         Settings->StatelessOperationExpirationMs = QUIC_STATELESS_OPERATION_EXPIRATION_MS;
     }
-    if (!Settings->IsSet.CongestionControlAlgorithm) {
-        Settings->CongestionControlAlgorithm = QUIC_CONGESTION_CONTROL_ALGORITHM_DEFAULT;
-    }
+
+    Settings->CongestionControlAlgorithm = QUIC_CONGESTION_CONTROL_ALGORITHM_DEFAULT;
+
     if (!Settings->IsSet.DestCidUpdateIdleTimeoutMs) {
         Settings->DestCidUpdateIdleTimeoutMs = QUIC_DEFAULT_DEST_CID_UPDATE_IDLE_TIMEOUT_MS;
     }

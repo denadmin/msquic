@@ -220,7 +220,7 @@ MsQuicGetPublicIP(
     QUIC_STATUS Status;
     const QUIC_API_TABLE* MsQuic = NULL;
     HQUIC Registration = NULL;
-    const QUIC_REGISTRATION_CONFIG RegConfig = { "ip", QUIC_EXECUTION_PROFILE_LOW_LATENCY };
+    const QUIC_REGISTRATION_CONFIG RegConfig = { "ip", QUIC_EXECUTION_PROFILE_TYPE_MAX_THROUGHPUT };
 
     if (QUIC_FAILED(Status = MsQuicOpen2(&MsQuic))) {
         QUIC_PRINTF("MsQuicOpen2 failed, 0x%x!\n", Status);

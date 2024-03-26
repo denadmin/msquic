@@ -147,7 +147,7 @@ main(
     CredConfig.Flags = QUIC_CREDENTIAL_FLAG_NO_CERTIFICATE_VALIDATION | QUIC_CREDENTIAL_FLAG_CLIENT;
 
     EXIT_ON_FAILURE(MsQuicOpen2(&MsQuic));
-    const QUIC_REGISTRATION_CONFIG RegConfig = { "post", QUIC_EXECUTION_PROFILE_LOW_LATENCY };
+    const QUIC_REGISTRATION_CONFIG RegConfig = { "post", QUIC_EXECUTION_PROFILE_TYPE_MAX_THROUGHPUT };
     EXIT_ON_FAILURE(MsQuic->RegistrationOpen(&RegConfig, &Registration));
     EXIT_ON_FAILURE(MsQuic->ConfigurationOpen(Registration, ALPNs, ARRAYSIZE(ALPNs), nullptr, 0, nullptr, &Configuration));
     EXIT_ON_FAILURE(MsQuic->ConfigurationLoadCredential(Configuration, &CredConfig));

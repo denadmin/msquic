@@ -1226,7 +1226,7 @@ main(
     CxPlatSystemLoad();
 
     QUIC_STATUS Status;
-    const QUIC_REGISTRATION_CONFIG RegConfig = { "quicinterop", QUIC_EXECUTION_PROFILE_LOW_LATENCY };
+    const QUIC_REGISTRATION_CONFIG RegConfig = { "quicinterop", QUIC_EXECUTION_PROFILE_TYPE_MAX_THROUGHPUT };
 
     if (QUIC_FAILED(Status = CxPlatInitialize())) {
         printf("CxPlatInitialize failed, 0x%x!\n", Status);

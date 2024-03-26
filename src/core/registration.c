@@ -74,8 +74,7 @@ MsQuicRegistrationOpen(
 
     CxPlatZeroMemory(Registration, RegistrationSize);
     Registration->Type = QUIC_HANDLE_TYPE_REGISTRATION;
-    Registration->ExecProfile =
-        Config == NULL ? QUIC_EXECUTION_PROFILE_LOW_LATENCY : Config->ExecutionProfile;
+    Registration->ExecProfile = QUIC_EXECUTION_PROFILE_TYPE_MAX_THROUGHPUT;
     Registration->NoPartitioning =
         Registration->ExecProfile == QUIC_EXECUTION_PROFILE_TYPE_SCAVENGER;
     CxPlatLockInitialize(&Registration->ConfigLock);
