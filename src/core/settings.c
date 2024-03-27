@@ -303,9 +303,8 @@ QuicSettingsCopy(
     if (!Destination->IsSet.StatelessOperationExpirationMs) {
         Destination->StatelessOperationExpirationMs = Source->StatelessOperationExpirationMs;
     }
-    if (!Destination->IsSet.CongestionControlAlgorithm) {
-        Destination->CongestionControlAlgorithm = Source->CongestionControlAlgorithm;
-    }
+    Destination->CongestionControlAlgorithm = Source->CongestionControlAlgorithm;
+
     if (!Destination->IsSet.DestCidUpdateIdleTimeoutMs) {
         Destination->DestCidUpdateIdleTimeoutMs = Source->DestCidUpdateIdleTimeoutMs;
     }
@@ -657,10 +656,8 @@ QuicSettingApply(
         Destination->IsSet.StatelessOperationExpirationMs = TRUE;
     }
 
-    if (Source->IsSet.CongestionControlAlgorithm && (!Destination->IsSet.CongestionControlAlgorithm || OverWrite)) {
-        Destination->CongestionControlAlgorithm = Source->CongestionControlAlgorithm;
-        Destination->IsSet.CongestionControlAlgorithm = TRUE;
-    }
+    Destination->CongestionControlAlgorithm = Source->CongestionControlAlgorithm;
+    Destination->IsSet.CongestionControlAlgorithm = TRUE;
 
     if (Source->IsSet.DestCidUpdateIdleTimeoutMs && (!Destination->IsSet.DestCidUpdateIdleTimeoutMs || OverWrite)) {
         Destination->DestCidUpdateIdleTimeoutMs = Source->DestCidUpdateIdleTimeoutMs;
